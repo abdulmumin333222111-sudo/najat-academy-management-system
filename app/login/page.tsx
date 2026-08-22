@@ -1,15 +1,10 @@
 'use client';
 
-import { useState } from 'form'; // wait, React useState
 import React, { useState } from 'react';
-import React, { useState } from 'react';
+import { useRouter } from 'next/navigation';
 
-
-
-import React, { useState } from 'react';
-
-  import React, { useState } from 'react';
-
+export default function LoginPage() {
+  const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
   const [loading, setLoading] = useState(false);
@@ -46,7 +41,7 @@ import React, { useState } from 'react';
     <div className="min-h-screen flex items-center justify-center bg-gray-100 px-4">
       <div className="max-w-md w-full bg-white rounded-lg shadow-md p-8">
         <h2 className="text-2xl font-bold text-center text-emerald-800 mb-6">
-          নজাত একাডেমি লগইন
+          নাজাত একাডেমি লগইন
         </h2>
 
         {error && (
@@ -80,14 +75,14 @@ import React, { useState } from 'react';
               value={password}
               onChange={(e) => setPassword(e.target.value)}
               className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-emerald-500"
-              placeholder="••••••••"
+              placeholder="********"
             />
           </div>
 
           <button
             type="submit"
             disabled={loading}
-            className="w-full py-2 px-4 bg-emerald-600 hover:bg-emerald-700 text-white font-semibold rounded-md transition duration-200 disabled:opacity-50"
+            className="w-full bg-emerald-600 text-white py-2 rounded-md hover:bg-emerald-700 transition duration-200 font-medium"
           >
             {loading ? 'লগইন হচ্ছে...' : 'লগইন করুন'}
           </button>
